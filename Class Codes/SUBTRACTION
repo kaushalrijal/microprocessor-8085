@@ -1,0 +1,17 @@
+LXI B, 4422H
+LXI D, 3311H
+
+MOV A, C
+
+SUB E
+
+MOV L, A
+MOV A,B
+
+SBB D
+
+MOV H, A
+
+SHLD 8500H
+
+HLT

@@ -1,0 +1,13 @@
+LXI H, 5001H
+
+MVI A, 99
+
+SUB M	
+INR A
+DCX H
+ADD M
+
+DAA
+STA 5005H
+
+HLT

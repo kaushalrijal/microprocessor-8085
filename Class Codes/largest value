@@ -1,0 +1,16 @@
+LXI H, 4000H
+MOV B, M	; counter
+INX H
+MOV A, M
+
+DCR B
+
+next: INX H
+CMP M
+JNC loop
+MOV A, M
+
+loop: DCR B
+JNZ next
+STA 5000H
+HLT

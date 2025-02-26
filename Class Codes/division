@@ -1,0 +1,22 @@
+LXI H, 8000H
+MOV A, M
+INX H
+
+MOV B, M
+MVI C, 00H
+
+AA: INR C
+
+SUB B
+
+JNC AA
+DCR C
+ADD B
+
+INX H
+MOV M, C
+
+INX H
+
+MOV M,A
+HLT

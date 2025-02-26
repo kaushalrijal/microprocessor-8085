@@ -1,0 +1,34 @@
+MVI A, 14H
+LXI H, 5000H
+LXI B, 6000H
+LXI D, 7000H
+
+REPEAT: CALL NEXT
+JNZ REPEAT
+HLT
+
+NEXT: PUSH PSW
+PUSH H
+MOV A, M
+MVI H, 08H
+MVI L, 00H
+
+BACK: RRC
+JNC ONE
+INR L
+
+
+ONE: DCR H
+JNZ BACK
+MOV A, L
+STAX B ; total no of counted zeroes
+MVI A, 08H
+SUB L
+STAX D	; total no of counted ones
+INX B
+INX D
+POP H
+POP PSW
+DCR A
+INX H
+RET

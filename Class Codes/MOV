@@ -1,0 +1,8 @@
+MVI A, 05H
+
+; this is a comment
+
+MOV B, A
+
+MOV C, A ADD B
+HLT
